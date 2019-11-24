@@ -14,8 +14,8 @@ A 10-site one-dimensional lattice with periodic boundary conditions can be
 constructed specifying the edges as follows:
 
 ```python
->>> from netket.graph import CustomGraph
->>> g=CustomGraph([[i, (i + 1) % 10] for i in range(10)])
+>>> import netket
+>>> g=netket.graph.CustomGraph([[i, (i + 1) % 10] for i in range(10)])
 >>> print(g.n_sites)
 10
 
@@ -28,7 +28,7 @@ constructed specifying the edges as follows:
 
 |   Property   |      Type       |                                                        Description                                                        |
 |--------------|-----------------|---------------------------------------------------------------------------------------------------------------------------|
-|adjacency_list|       list      | The adjacency list of the graph where each node is           represented by an integer in `[0, n_sites)`                  |
+|adjacency_list|       list      | The adjacency list of the graph where each node is           represented by an integer in `[0, n_sites)`.                 |
 |automorphisms |       list[list]| The automorphisms of the graph,           including translation symmetries only.                                          |
 |distances     |       list[list]| The distances between the nodes. The fact that some node           may not be reachable from another is represented by -1.|
 |edges         |       list      | The graph edges.                                                                                                          |
