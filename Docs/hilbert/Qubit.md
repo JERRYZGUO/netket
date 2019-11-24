@@ -1,46 +1,21 @@
-# Boson
-Hilbert space composed of bosonic states.
+# Qubit
+Hilbert space composed of qubits.
 
-## Class Constructor [1]
-Constructs a new ``Boson`` given a graph and maximum occupation number.
+## Class Constructor
+Constructs a new ``Qubit`` given a graph.
 
 |Argument|       Type       |         Description          |
 |--------|------------------|------------------------------|
 |graph   |netket.graph.Graph|Graph representation of sites.|
-|n_max   |int               |Maximum occupation for a site.|
 
 ### Examples
-Simple boson hilbert space.
+Simple qubit hilbert space.
 
 ```python
 >>> from netket.graph import Hypercube
->>> from netket.hilbert import Boson
+>>> from netket.hilbert import Qubit
 >>> g = Hypercube(length=10,n_dim=2,pbc=True)
->>> hi = Boson(graph=g, n_max=4)
->>> print(hi.size)
-100
-
-```
-
-
-## Class Constructor [2]
-Constructs a new ``Boson`` given a graph,  maximum occupation number,
-and total number of bosons.
-
-|Argument|       Type       |            Description             |
-|--------|------------------|------------------------------------|
-|graph   |netket.graph.Graph|Graph representation of sites.      |
-|n_max   |int               |Maximum occupation for a site.      |
-|n_bosons|int               |Constraint for the number of bosons.|
-
-### Examples
-Simple boson hilbert space.
-
-```python
->>> from netket.graph import Hypercube
->>> from netket.hilbert import Boson
->>> g = Hypercube(length=10,n_dim=2,pbc=True)
->>> hi = Boson(graph=g, n_max=5, n_bosons=11)
+>>> hi = Qubit(graph=g)
 >>> print(hi.size)
 100
 
